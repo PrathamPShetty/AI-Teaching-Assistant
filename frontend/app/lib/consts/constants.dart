@@ -1,2 +1,2 @@
-const String appName = "AI Skin Recommendation";
+const String appName = "Ai Teaching Assiatant";
 const String getStarted = "Get Started";

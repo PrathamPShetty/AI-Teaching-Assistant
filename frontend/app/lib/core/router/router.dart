@@ -24,7 +24,7 @@ final GoRouter router = GoRouter(
         GoRoute(
             path: 'imageInput',
             builder: (BuildContext context, GoRouterState state) =>
-                const CameraPage(),
+                CameraApp(),
             ),
          GoRoute(
           path: 'help',

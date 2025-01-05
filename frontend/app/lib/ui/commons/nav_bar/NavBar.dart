@@ -6,7 +6,7 @@ class NavBar extends StatefulWidget {
   const NavBar({
     super.key,
     required this.bodyContent,
-    this.title = 'AI Teacher',
+    this.title = 'AI Teaching Assiatant',
   });
 
   final Widget bodyContent;
@@ -88,7 +88,7 @@ class _NavBarState extends State<NavBar> {
   List<Widget> _MenuItems(BuildContext context) {
     return [
       _drawerItem(context, Icons.home, 'Ask Question', '/'),
-      _drawerItem(context, Icons.recommend, 'Upload Question', '/imageInput'),
+      _drawerItem(context, Icons.upload, 'Upload Question', '/imageInput'),
       _drawerItem(context, Icons.help, 'Help', '/help'),
       _drawerItem(context, Icons.settings, 'Setting', '/setting'),
     ];
