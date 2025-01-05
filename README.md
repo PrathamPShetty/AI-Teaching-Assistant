@@ -135,9 +135,11 @@ Add the **IPv4 Address** (e.g., `192.168.203.102`)  along with the port number i
 
 When you run the Flutter app, you should see the AI Teaching Assistant interface on your mobile or emulator screen.
 
-![AI Teaching Assistant Interface](./public/1.jpg)
-![AI Teaching Assistant Interface](./public/2.jpg)
-![AI Teaching Assistant Interface](./public/3.jpg)
+![AI Teaching Assistant Interface](./public/4.jpg)
+![AI Teaching Assistant Interface](./public/5.jpg)
+![AI Teaching Assistant Interface](./public/6.jpg)
+![AI Teaching Assistant Interface](./public/7.jpg)
+![AI Teaching Assistant Interface](./public/8.jpg)
 
 ---
 
