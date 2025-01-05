@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Request, HTTPException, File, UploadFile
+from fastapi import FastAPI, Request, HTTPException, File, UploadFile,Form
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
@@ -57,8 +57,10 @@ async def evaluate_question(question: Question):
     try:
         # Use the AI teaching assistant to answer the question
         answer = ai_teaching_assistant(question.question)
-        answer = answer.replace('*', '')
-        answer = answer.replace('#', '')
+        print(answer)
+        answer = answer.replace('**', '')
+        answer = answer.replace('###', '')
+     
 
         logger.info(f"Answer: {answer}")
         return JSONResponse(content={"answer": answer})
@@ -69,7 +71,7 @@ async def evaluate_question(question: Question):
 
 # Endpoint to handle image-based questions
 @app.post("/withimage")
-async def with_image(file: UploadFile = File(...), question: str = "What is in this image?"):
+async def with_image(image: UploadFile = File(...),  question: str = Form(...) ):
     """
     Answer a question about an uploaded image using the AI teaching assistant.
 
@@ -84,7 +86,7 @@ async def with_image(file: UploadFile = File(...), question: str = "What is in t
         logger.info("Image file received in the POST request")
 
         # Read the image file
-        content = await file.read()
+        content = await image.read()
         im = Image.open(BytesIO(content))
 
         # Save the image to a temporary file
@@ -99,6 +101,8 @@ async def with_image(file: UploadFile = File(...), question: str = "What is in t
 
         # Use the AI teaching assistant to answer the question about the image
         answer = ask_with_image(image_base64, question)
+        answer = answer.replace('**', '')
+        answer = answer.replace('###', '')
 
         return JSONResponse(content={"answer": answer})
 
