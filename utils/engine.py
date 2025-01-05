@@ -1,6 +1,6 @@
 import ollama
 from langchain_core.prompts import PromptTemplate
-from prompt import create_problem_prompt_template
+from utils.prompt import create_problem_prompt_template
 
 def ai_teaching_assistant(problem):
     """

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart'; // Add this package
 import '../../../core/cubit/customer/recomPage_cubit.dart';
-import 'package:app/ui/Customer/resultpage/page.dart';
+
 
 class CameraPage extends StatelessWidget {
   const CameraPage({Key? key}) : super(key: key);
@@ -13,7 +13,7 @@ class CameraPage extends StatelessWidget {
       create: (_) => SkinCareCubit(),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('AI Skin Recommendation'),
+          title: const Text('Input the image of Question'),
         ),
         body: BlocConsumer<SkinCareCubit, SkinCareState>(
           listener: (context, state) {
@@ -23,15 +23,15 @@ class CameraPage extends StatelessWidget {
               );
             } else if (state is SkinCareResult) {
               // Navigate to ResultPage when results are available
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ResultPage(
-                    skinType: state.skinType,
-                    acneType: state.acneType,
-                  ),
-                ),
-              );
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(
+              //     builder: (context) => ResultPage(
+              //       skinType: state.skinType,
+              //       acneType: state.acneType,
+              //     ),
+              //   ),
+              // );
             }
           },
           builder: (context, state) {
@@ -43,7 +43,7 @@ class CameraPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
-                    'Take a photo after washing face',
+                    'Take a photo of clarity of Question',
                     style: TextStyle(fontSize: 16.0),
                   ),
                   const SizedBox(height: 20),

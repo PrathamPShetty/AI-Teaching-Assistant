@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:farm_link_ai/core/cubit/SplashScreen/splashScreen_cubit.dart';
-import 'package:farm_link_ai/core/cubit/SplashScreen/splashScreen_state.dart';
-import 'package:farm_link_ai/consts/assets.dart' as consts;
-import 'package:farm_link_ai/consts/constants.dart';
+import 'package:app/core/cubit/SplashScreen/splashScreen_cubit.dart';
+import 'package:app/core/cubit/SplashScreen/splashScreen_state.dart';
+import 'package:app/consts/assets.dart' as consts;
+import 'package:app/consts/constants.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -63,7 +63,7 @@ class _SplashContent extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
               const Text(
-                "Brand New Perspective",
+                "AI Teaching Assistant",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 40,
@@ -72,7 +72,7 @@ class _SplashContent extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               const Text(
-                "Let's start with our summer collection.",
+                "I will teach you solve complex problem in the simplest way",
                 style: TextStyle(color: Colors.white, fontSize: 20),
               ),
               const SizedBox(height: 100),

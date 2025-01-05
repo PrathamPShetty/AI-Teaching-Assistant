@@ -1,14 +1,11 @@
-import 'package:farm_link_ai/ui/Customer/about/page.dart';
-import 'package:farm_link_ai/ui/Customer/contact/page.dart';
-import 'package:farm_link_ai/ui/Customer/home/page.dart';
-import 'package:farm_link_ai/ui/Customer/product/page.dart';
-import 'package:farm_link_ai/ui/SplashScreen/page.dart';
+
+import 'package:app/ui/home/page.dart';
+import 'package:app/ui/SplashScreen/page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:farm_link_ai/ui/Customer/recommedation/page.dart';
-import 'package:farm_link_ai/ui/Customer/resultpage/page.dart';
-import 'package:farm_link_ai/ui/Customer/help/page.dart';
-import 'package:farm_link_ai/ui/Customer/setting.dart';
+import 'package:app/ui/imageInput/page.dart';
+import 'package:app/ui/help/page.dart';
+import 'package:app/ui/settings/setting.dart';
 
 final GoRouter router = GoRouter(
   initialLocation: '/welcome',
@@ -23,34 +20,13 @@ final GoRouter router = GoRouter(
           builder: (BuildContext context, GoRouterState state) =>
               const SplashScreen(),
         ),
+
         GoRoute(
-          path: 'about',
-          builder: (BuildContext context, GoRouterState state) => const About(),
-        ),
-        GoRoute(
-          path: 'contact',
-          builder: (BuildContext context, GoRouterState state) =>
-              const Contact(),
-        ),
-        GoRoute(
-            path: 'recommendation',
+            path: 'imageInput',
             builder: (BuildContext context, GoRouterState state) =>
                 const CameraPage(),
-            routes: [
-              GoRoute(
-                path: '/display',
-                builder: (BuildContext context, GoRouterState state) {
-                  final skinType = state.uri.queryParameters['skinType'] ?? '';
-                  final acneType = state.uri.queryParameters['acneType'] ?? '';
-                  return ResultPage(skinType: skinType, acneType: acneType);
-                },
-              ),
-            ]),
-        GoRoute(
-          path: 'product',
-          builder: (BuildContext context, GoRouterState state) =>
-              const CustomerProduct(),
-        ),  GoRoute(
+            ),
+         GoRoute(
           path: 'help',
           builder: (BuildContext context, GoRouterState state) =>
               const Help(),

@@ -38,7 +38,7 @@ async def read_root(request: Request):
         HTMLResponse: The rendered HTML template for the root page.
     """
     logger.info("Rendering root page.")
-    return templates.TemplateResponse("index.html", {"request": request})
+    return JSONResponse({"response": "Hi,am Ai Teaching Assistant"})
 
 # Endpoint to handle text-based questions
 @app.post("/question")
@@ -57,6 +57,8 @@ async def evaluate_question(question: Question):
     try:
         # Use the AI teaching assistant to answer the question
         answer = ai_teaching_assistant(question.question)
+        answer = answer.replace('*', '')
+        answer = answer.replace('#', '')
 
         logger.info(f"Answer: {answer}")
         return JSONResponse(content={"answer": answer})

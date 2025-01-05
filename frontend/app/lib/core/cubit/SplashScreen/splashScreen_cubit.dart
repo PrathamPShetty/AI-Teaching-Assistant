@@ -1,6 +1,6 @@
 import 'dart:developer';
 import 'package:bloc/bloc.dart';
-import 'package:farm_link_ai/core/cubit/SplashScreen/splashScreen_state.dart';
+import 'package:app/core/cubit/SplashScreen/splashScreen_state.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class SplashCubit extends Cubit<SplashState> {

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:farm_link_ai/consts/assets.dart' as consts;
+import 'package:app/consts/assets.dart' as consts;
 
 class NavBar extends StatefulWidget {
   const NavBar({
     super.key,
     required this.bodyContent,
-    this.title = 'AI Skin Care Recommendation System',
+    this.title = 'AI Teacher',
   });
 
   final Widget bodyContent;
@@ -87,11 +87,8 @@ class _NavBarState extends State<NavBar> {
 
   List<Widget> _MenuItems(BuildContext context) {
     return [
-      _drawerItem(context, Icons.home, 'Home', '/'),
-      _drawerItem(context, Icons.info, 'About Us', '/about'),
-      _drawerItem(context, Icons.contact_phone, 'Contact', '/contact'),
-      _drawerItem(context, Icons.recommend, 'AI Recommendation', '/recommendation'),
-      _drawerItem(context, Icons.shopping_cart, 'Product', '/product'),
+      _drawerItem(context, Icons.home, 'Ask Question', '/'),
+      _drawerItem(context, Icons.recommend, 'Upload Question', '/imageInput'),
       _drawerItem(context, Icons.help, 'Help', '/help'),
       _drawerItem(context, Icons.settings, 'Setting', '/setting'),
     ];
