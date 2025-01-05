@@ -118,8 +118,8 @@ Add the **IPv4 Address** (e.g., `192.168.203.102`)  along with the port number i
 ## 🖼️ **Screenshots**
 
 ![AI Teaching Assistant Interface](./public/1.jpg)
-![AI Teaching Assistant Interface](./public/2.jpg)
 ![AI Teaching Assistant Interface](./public/3.jpg)
+![AI Teaching Assistant Interface](./public/2.jpg)
 
 ---
 
