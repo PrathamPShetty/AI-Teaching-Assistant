@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart'; // Add this package
 import '../../../core/cubit/customer/recomPage_cubit.dart';
-import 'package:farm_link_ai/ui/Customer/resultpage/page.dart';
+import 'package:app/ui/Customer/resultpage/page.dart';
 
 class CameraPage extends StatelessWidget {
   const CameraPage({Key? key}) : super(key: key);

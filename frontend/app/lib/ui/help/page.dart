@@ -1,6 +1,6 @@
-import 'package:farm_link_ai/consts/assets.dart' as consts;
+import 'package:app/consts/assets.dart' as consts;
 import 'package:flutter/material.dart';
-import 'package:farm_link_ai/ui/commons/nav_bar/NavBar.dart';
+import 'package:app/ui/commons/nav_bar/NavBar.dart';
 
 class Help extends StatelessWidget {
   const Help({super.key});

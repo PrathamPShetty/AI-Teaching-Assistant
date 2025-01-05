@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:farm_link_ai/ui/commons/nav_bar/NavBar.dart';
-import 'package:farm_link_ai/consts/assets.dart' as consts;
-import 'package:farm_link_ai/consts/homePageService.dart';
+import 'package:app/ui/commons/nav_bar/NavBar.dart';
+import 'package:app/consts/assets.dart' as consts;
+import 'package:app/consts/homePageService.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
