@@ -9,17 +9,27 @@ An AI-powered Teaching Assistant designed to enhance classroom interaction and m
 ```
 AI-Teaching-Assistant/
 ├── backend/       # Python Backend
-│   ├── venv/ # Virtual Environment
-         utils/
-              convertBase.py
-              engine.py 
-              prompt.py  
-│   ├── app.py     # Main Backend Script
+│   ├── venv/           # Virtual Environment
+│   ├── utils/          # Utility Scripts
+│   │   ├── convertBase.py
+│   │   ├── engine.py
+│   │   ├── prompt.py
+│   ├── app.py          # Main Backend Script
 │   ├── requirements.txt
 ├── frontend/
-│   ├── app/       # Flutter Application
+│   ├── app/            # Flutter Application
 │   ├── pubspec.yaml
-└── README.md      # Project Documentation
+└── README.md           # Project Documentation
+```
+
+---
+
+## 🚀 **Clone the Repository**
+
+First, clone the repository to your local machine:
+```bash
+git clone https://github.com/PrathamPShetty/AI-Teaching-Assistant.git
+cd AI-Teaching-Assistant
 ```
 
 ---
@@ -39,7 +49,7 @@ venv\Scripts\activate      # On Windows
 ```
 
 ### 3. **Install Dependencies**
-Create a `requirements.txt` file:
+Ensure `requirements.txt` contains:
 ```text
 ollama
 fastapi[all]
@@ -56,7 +66,7 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
-### 5. **Run the Backend Server**
+### 4. **Run the Backend Server**
 ```bash
 python app.py
 ```
@@ -97,11 +107,19 @@ flutter run
 
 ---
 
-## 🖼️ **Expected Output**
+## 🛠️ **Configure App Settings**
 
-When you run the Flutter app, you should see a photo and the AI Teaching Assistant interface on your mobile or emulator screen.
+Run `ipconfig` in your terminal (Windows) or `ifconfig` (Linux/MacOS).
 
-![AI Teaching Assistant Interface](./assets/app_screenshot.png)
+Add the **IPv4 Address** (e.g., `192.168.203.102`)  along with the port number in the app settings.
+
+---
+
+## 🖼️ **Screenshots**
+
+![AI Teaching Assistant Interface](./public/1.jpg)
+![AI Teaching Assistant Interface](./public/2.jpg)
+![AI Teaching Assistant Interface](./public/3.jpg)
 
 ---
 
@@ -110,6 +128,18 @@ When you run the Flutter app, you should see a photo and the AI Teaching Assista
 - [x] Backend server is running.
 - [x] Ollama with LLaMA model is configured.
 - [x] Flutter app is installed and running.
+
+---
+
+## 🖼️ **Expected Output**
+
+When you run the Flutter app, you should see the AI Teaching Assistant interface on your mobile or emulator screen.
+
+![AI Teaching Assistant Interface](./public/1.jpg)
+![AI Teaching Assistant Interface](./public/2.jpg)
+![AI Teaching Assistant Interface](./public/3.jpg)
+
+---
 
 Enjoy building your **AI Teaching Assistant**! 🚀✨
 
