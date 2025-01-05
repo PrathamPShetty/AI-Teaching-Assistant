@@ -1,9 +1,8 @@
 ollama
 fastapi[all]
 langchain
-
 uvicorn
 pydantic
 jinja2
-
-
+opencv-python
+Pillow
