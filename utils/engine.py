@@ -1,32 +1,13 @@
-# Import necessary libraries
 import ollama
 from langchain_core.prompts import PromptTemplate
+from prompt import create_problem_prompt_template
 
-# Base template for explaining concepts in simple words
-base_template = """
-You are an AI Teaching Assistant that explains concepts in simple words for students. Your goal is to make complex subject ideas easy to understand.
-
-**Concept to Explain**: {concept}
-
-### Instructions:
-1. **Define the Concept**: Explain the concept in simple, easy-to-understand language.
-2. **Provide Examples**: Give a real-life example to help students relate to the concept.
-3. **Provide Images**: If needed, suggest an image description to help students visualize the concept.
-4. **Keep It Short**: Your explanation should be concise and to the point.
-
-### Output Format:
-Concept: [Name of the concept]
-Definition: [Simple definition]
-Example: [Real-life example]
-Image Description: [Description of an image to help visualize the concept, if applicable]
-"""
-
-def ai_teaching_assistant(concept):
+def ai_teaching_assistant(problem):
     """
-    Function to interact with the AI model for explaining concepts.
+    Function to interact with the AI model for explaining math and science problems.
 
     Args:
-        concept (str): The concept to explain (e.g., "What is gravity?").
+        problem (str): The problem to explain (e.g., "Solve 2x + 5 = 15").
 
     Returns:
         str: The structured explanation from the model.
@@ -35,7 +16,7 @@ def ai_teaching_assistant(concept):
     messages = [
         {
             'role': 'user',
-            'content': create_concept_prompt_template(concept)
+            'content': create_problem_prompt_template(problem)
         },
     ]
     
@@ -51,25 +32,78 @@ def ai_teaching_assistant(concept):
     except Exception as e:
         raise RuntimeError(f"An error occurred: {str(e)}")
 
-def create_concept_prompt_template(concept):
+
+
+def ask_with_image(image_base64, question):
     """
-    Create a prompt template for explaining concepts.
+    Send an image and a question to the AI model.
 
     Args:
-        concept (str): The concept to explain.
+        image_path (str): Path to the image file.
+        question (str): The question to ask about the image.
 
     Returns:
-        str: A formatted prompt string ready for the AI system.
+        str: The model's response.
     """
-    prompt_template = PromptTemplate(
-        input_variables=["concept"],
-        template=base_template
-    )
-    return prompt_template.format(concept=concept)
+ 
+    messages = [
+            {
+               'role': 'user',
+               'content': create_problem_prompt_template(image_base64)
+            }
+        ]
 
-# Example usage
+
+    try:
+        response = ollama.chat(model='llama3.2:1b', messages=messages)
+
+        if 'message' in response and 'content' in response['message']:
+            return response['message']['content']
+        else:
+            raise ValueError("Unexpected response structure.")
+
+    except Exception as e:
+        raise RuntimeError(f"An error occurred: {str(e)}")
+
+
+
+
 if __name__ == "__main__":
-    # Ask the AI to explain a concept
-    concept_to_explain = "What is gravity?"
-    explanation = ai_teaching_assistant(concept_to_explain)
-    print(explanation)
+    # Ask the AI to explain a math problem
+    math_problem = "Solve 2x + 5 = 15"
+    math_explanation = ai_teaching_assistant(math_problem)
+    print("Math Problem Explanation:")
+    print(math_explanation)
+
+    # Ask the AI to explain a science problem
+    science_problem = "Explain why the sky appears blue."
+    science_explanation = ai_teaching_assistant(science_problem)
+    print("\nScience Problem Explanation:")
+    print(science_explanation)
+
+# 
+  
+# def generate_image(description):
+#     """
+#     Generate an image based on the description using DALL·E.
+
+#     Args:
+#         description (str): The image description.
+
+#     Returns:
+#         str: URL of the generated image.
+#     """
+ 
+#     response = client.images.generate(
+#         model="dall-e-3",
+#         prompt=description,
+#         size="1024x1024",
+#         quality="standard",
+#         n=1,
+#     )
+#     return response.data[0].url
+
+    # if "Image Description:" in explanation:
+    #     image_description = explanation.split("Image Description:")[1].strip()
+    #     image_url = generate_image(image_description)
+    #     print(f"Generated Image URL: {image_url}")
